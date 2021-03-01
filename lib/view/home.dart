@@ -40,17 +40,15 @@ class _HomePageState extends State<HomePage> {
         builder: (context, snapshot){
           if(!snapshot.hasData){
             return Center(
-              child: Text("data ni aaya h"),
+              child: Text("not has data"),
             );
           }else if(snapshot.hasError){
             return Center(
-              child: Text("error h"),
+              child: Text("has error"),
             );
           }else if(snapshot.hasData){
             print(snapshot.hasData);
-            return Center(
-              child:Text("Has data") ,
-            );
+            return HomeTile();
           }
           return CircularProgressIndicator();
         },
@@ -94,4 +92,16 @@ class Track{
     );
   }
 
+}
+
+class HomeTile extends StatefulWidget {
+  @override
+  _HomeTileState createState() => _HomeTileState();
+}
+
+class _HomeTileState extends State<HomeTile> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
 }
